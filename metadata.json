@@ -1,0 +1,7 @@
+{
+  "name": "ApexOS Linux Distro Studio",
+  "description": "Architect and build custom Ubuntu-based Linux distributions pre-configured with PPA repositories for Claude, ChatGPT, Android Studio, and Lutris.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
