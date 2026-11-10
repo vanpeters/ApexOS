@@ -585,6 +585,20 @@ osssssydmm+                 hmmmhssssso
         outputNode = <p className="text-xs text-cyan-400">Entering TDFSB 3D File System Browser room...</p>;
         break;
 
+      case 'python':
+      case 'python3':
+      case 'py':
+      case 'idle':
+      case 'python-compiler':
+        if (onOpenApp) onOpenApp('python-compiler');
+        outputNode = (
+          <div className="space-y-1 text-xs font-mono">
+            <p className="text-amber-400 font-bold">Python 3.12.3 (main, Nov 2024) [GCC 13.3.0 on linux]</p>
+            <p className="text-emerald-400">Launching Python Compiler Pro & Interactive Run Prompt IDE...</p>
+          </div>
+        );
+        break;
+
       case 'wine':
         outputNode = (
           <div className="space-y-0.5 text-xs font-mono text-slate-300">

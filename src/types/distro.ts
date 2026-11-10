@@ -84,7 +84,8 @@ export type ActiveAppId =
   | 'cmatrix'
   | 'tdfsb'
   | 'system-dashboard'
-  | 'display-manager';
+  | 'display-manager'
+  | 'python-compiler';
 
 export interface WindowState {
   id: ActiveAppId;

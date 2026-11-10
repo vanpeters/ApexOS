@@ -96,3 +96,99 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.6);
 }
+
+/* Prism.js Syntax Highlighting for ApexOS Python Compiler */
+.prism-editor-code {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-size: 12px !important;
+  line-height: 20px !important;
+  tab-size: 4 !important;
+  -moz-tab-size: 4 !important;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #64748b !important; /* slate-500 */
+  font-style: italic !important;
+}
+
+.token.punctuation {
+  color: #94a3b8 !important; /* slate-400 */
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f43f5e !important; /* rose-500 */
+}
+
+.token.boolean {
+  color: #fb923c !important; /* orange-400 */
+  font-weight: 600 !important;
+}
+
+.token.number {
+  color: #f59e0b !important; /* amber-500 */
+  font-weight: 500 !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.inserted {
+  color: #10b981 !important; /* emerald-400 */
+}
+
+.token.builtin {
+  color: #06b6d4 !important; /* cyan-500 */
+  font-weight: 500 !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #38bdf8 !important; /* sky-400 */
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #c084fc !important; /* purple-400 */
+  font-weight: 600 !important;
+}
+
+.token.function,
+.token.class-name {
+  color: #60a5fa !important; /* blue-400 */
+  font-weight: 500 !important;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #fb923c !important; /* orange-400 */
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold !important;
+}
+
+.token.italic {
+  font-style: italic !important;
+}
+
+.token.decorator {
+  color: #eab308 !important; /* yellow-500 */
+  font-style: italic !important;
+}
+
+.token.triple-quoted-string {
+  color: #34d399 !important; /* emerald-400/90 */
+}
+

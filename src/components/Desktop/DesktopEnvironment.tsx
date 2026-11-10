@@ -31,6 +31,7 @@ import {
   Compass,
   Play,
   Settings as SettingsIcon,
+  Code2,
 } from 'lucide-react';
 import { ActiveAppId, DistroConfiguration, WindowState } from '../../types/distro';
 import { WindowFrame } from './WindowFrame';
@@ -53,6 +54,7 @@ import { CmatrixApp } from '../Apps/CmatrixApp';
 import { TdfsbApp } from '../Apps/TdfsbApp';
 import { SystemDashboardApp } from '../Apps/SystemDashboardApp';
 import { DisplayManagerApp } from '../Apps/DisplayManagerApp';
+import { PythonCompilerApp } from '../Apps/PythonCompilerApp';
 
 interface DesktopEnvironmentProps {
   config: DistroConfiguration;
@@ -292,6 +294,16 @@ export const DesktopEnvironment: React.FC<DesktopEnvironmentProps> = ({
       position: { x: 150, y: 70 },
       size: { width: 940, height: 640 },
     },
+    'python-compiler': {
+      id: 'python-compiler',
+      title: 'Python 3.12 Compiler Pro — Interactive IDE & Run Prompt',
+      isOpen: false,
+      isMinimized: false,
+      isMaximized: false,
+      zIndex: 23,
+      position: { x: 160, y: 75 },
+      size: { width: 960, height: 620 },
+    },
   });
 
   useEffect(() => {
@@ -366,6 +378,7 @@ export const DesktopEnvironment: React.FC<DesktopEnvironmentProps> = ({
 
   const dockApps = [
     { id: 'distro-builder' as ActiveAppId, name: 'Distro Architect & PPAs', icon: <Sliders className="w-5 h-5 text-amber-400" /> },
+    { id: 'python-compiler' as ActiveAppId, name: 'Python 3.12 Compiler & IDE', icon: <Code2 className="w-5 h-5 text-amber-400" /> },
     { id: 'system-dashboard' as ActiveAppId, name: 'System Dashboard (CPU/RAM/GPU)', icon: <Activity className="w-5 h-5 text-emerald-400" /> },
     { id: 'display-manager' as ActiveAppId, name: 'Display & Screen Manager', icon: <Monitor className="w-5 h-5 text-indigo-400" /> },
     { id: 'terminal' as ActiveAppId, name: 'Terminal (bash & boot)', icon: <Terminal className="w-5 h-5 text-emerald-400" /> },
@@ -650,6 +663,18 @@ export const DesktopEnvironment: React.FC<DesktopEnvironmentProps> = ({
 
         {/* Desktop Surface Shortcuts */}
         <div className="absolute inset-0 pl-20 pt-4 p-4 pointer-events-none grid grid-cols-2 md:grid-cols-2 gap-2.5 max-w-xs z-10 max-h-[calc(100vh-60px)] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          <div
+            onClick={() => openApp('python-compiler')}
+            className="pointer-events-auto flex flex-col items-center p-2 rounded-xl hover:bg-white/10 cursor-pointer w-22 text-center transition group"
+          >
+            <div className="w-11 h-11 rounded-xl bg-slate-900/80 border border-amber-500/40 text-amber-400 flex items-center justify-center shadow-lg group-hover:scale-105 transition">
+              <Code2 className="w-5 h-5" />
+            </div>
+            <span className="text-[10px] font-medium text-white drop-shadow-md mt-1 truncate w-full font-mono">
+              Python IDE
+            </span>
+          </div>
+
           <div
             onClick={() => openApp('system-dashboard')}
             className="pointer-events-auto flex flex-col items-center p-2 rounded-xl hover:bg-white/10 cursor-pointer w-22 text-center transition group"
@@ -1107,6 +1132,19 @@ export const DesktopEnvironment: React.FC<DesktopEnvironmentProps> = ({
           icon={<Monitor className="w-4 h-4 text-indigo-400" />}
         >
           <DisplayManagerApp config={config} />
+        </WindowFrame>
+
+        {/* Window 19: Python 3.12 Compiler & Interactive IDE */}
+        <WindowFrame
+          window={windows['python-compiler']}
+          onClose={closeWindow}
+          onMinimize={minimizeWindow}
+          onMaximize={maximizeWindow}
+          onFocus={focusWindow}
+          onMove={moveWindow}
+          icon={<Code2 className="w-4 h-4 text-amber-400" />}
+        >
+          <PythonCompilerApp config={config} />
         </WindowFrame>
       </div>
 

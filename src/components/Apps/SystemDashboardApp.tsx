@@ -19,6 +19,7 @@ import {
   Info,
   Fan,
   Thermometer,
+  Server,
   Battery,
   BatteryCharging,
   BatteryFull,
